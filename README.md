@@ -24,7 +24,7 @@ CloudVision AI 是一個結合大型語言模型（LLM）與遙測知識的互�
 
 **Interactive HTML Slides**
 
-GitHub Pages 網址：部署完成後填入
+GitHub Pages 網址：https://github.com/NYCUmhtang/cloudvision-ai
 
 ## 專案架構
 
