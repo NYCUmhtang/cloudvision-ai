@@ -1,0 +1,24 @@
+# Do not publish original research documents without permission
+/raw/*
+!/raw/.gitkeep
+!/raw/README.md
+!/raw/assets/
+/raw/assets/*
+!/raw/assets/.gitkeep
+# Python caches / environment
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Temporary artifacts
+*.tmp
+*.bak
+
+# Local validation outputs
+/tests/__pycache__/
