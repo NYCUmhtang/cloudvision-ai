@@ -1,0 +1,20 @@
+{
+  "card_id": "CARD-S05-01",
+  "slide_number": 5,
+  "slide_title": "雲影不等於地形陰影",
+  "teaching_objective": "辨識不同陰影的成因",
+  "wiki_id": "W-M04-003",
+  "wiki_title": "雲影與地形暗區的區別",
+  "wiki_path": "wiki/W-M04-003.md",
+  "wiki_sha256": "e74d61b7c8d9841cfe7070807e987faa4e671db1692c8fb7734aadb7c60a6ddf",
+  "source_ids": [
+    "P02"
+  ],
+  "source_pages": "2, 5–6, 17",
+  "evidence_sections": {
+    "基礎說明與知識整理": "雲影和地形陰影在光學影像都可能呈現低亮度。Fmask 類方法除了利用暗像元特徵，還考慮雲的位置、太陽－感測器幾何關係與 DEM／坡度／坡向等地形資訊，以減少錯誤。",
+    "進階重點": "- 雲影可能需要對應雲體投影形狀與方向，暗區不一定代表雲影。\n- 地勢起伏影響投影與亮度，因此高山場景需要更多地形資訊。\n- P02 指明 Fmask 4.0 雲影部分承襲 MFmask，請勿誇大為全新模型。"
+  },
+  "evidence_sha256": "a5b33d2458877a06caa6dc28b7e4db010c61d73dc3e3a3a6fac30fbd069d1665",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

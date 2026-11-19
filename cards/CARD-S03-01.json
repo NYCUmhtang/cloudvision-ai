@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S03-01",
+  "slide_number": 3,
+  "slide_title": "衛星如何觀測地球？",
+  "teaching_objective": "認識光學影像和不同波段",
+  "wiki_id": "W-M03-001",
+  "wiki_title": "多光譜與感測器波段差異",
+  "wiki_path": "wiki/W-M03-001.md",
+  "wiki_sha256": "c0236c8bcd74deac3f39399d351a6514c78b2bae37a07d6e78301f183c45075f",
+  "source_ids": [
+    "P01",
+    "P02"
+  ],
+  "source_pages": "3, 9–10",
+  "evidence_sections": {
+    "基礎說明與知識整理": "多光譜影像利用多個波段辨識地物。RGB 是可見光三波段；NIR、SWIR 和捲雲（Cirrus）波段可提供不同光譜特徵，協助區分雲、雪和亮地表。",
+    "進階重點": "- Sentinel-2 MSI 提供 10、20、60 m 等不同空間解析度的波段，演算法使用前須依需求處理解析度差異。\n- Sentinel-2 沒有熱紅外波段，與 Landsat 8 的輸入條件不同。\n- 不可把適用於 Sentinel-2 全波段的 Fmask 程序直接宣稱適合只提供 RGB 的感測器。"
+  },
+  "evidence_sha256": "34cb99c93342d9892efecdcfde8b5376bf10a002553cf6ec0478d909fbdd9aa3",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

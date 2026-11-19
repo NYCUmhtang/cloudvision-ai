@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S10-02",
+  "slide_number": 10,
+  "slide_title": "雲影遮罩與影像切換案例",
+  "teaching_objective": "理解遮罩的形式及可視化方式",
+  "wiki_id": "W-M02-003",
+  "wiki_title": "CloudSEN12 的四類雲影語意標籤",
+  "wiki_path": "wiki/W-M02-003.md",
+  "wiki_sha256": "5f812c0e57096e79bfe862645725b7e31604e3e848fbb48195380f9f1648bf60",
+  "source_ids": [
+    "P03"
+  ],
+  "source_pages": "P03 PDF p.5，Table 3",
+  "evidence_sections": {
+    "基礎說明": "CloudSEN12 把像元標成 Clear、Thick Cloud、Thin Cloud、Cloud Shadow 四類，並定義「有效／無效」與「雲／非雲」的聚合類別。",
+    "進階重點": "- Clear 為無雲和雲影污染的像元（code 0）。\n- Thick Cloud（code 1）遮蔽地表反射訊號；Thin Cloud（code 2）會改變地表光譜但仍有部分背景可辨。\n- Cloud Shadow（code 3）是厚雲或薄雲在地表投射的暗像元；在雲／非雲二元測試屬非雲，但在有效／無效測試屬無效。",
+    "文獻差異、適用條件及限制": "P03 PDF p.1 提醒厚雲與薄雲間尚無普遍一致的定量分界，不能把單一資料集標籤規則說成自然界絕對標準。"
+  },
+  "evidence_sha256": "8f4bcb70a4e0143accc40417a8768bb521f0c911e0f9c6410f01ba4226f6bfb0",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

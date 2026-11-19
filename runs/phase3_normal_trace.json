@@ -1,0 +1,295 @@
+{
+  "timestamp_utc": "2026-11-19T07:05:04+00:00",
+  "run_type": "normal",
+  "graph_version": "1.0",
+  "nodes": [
+    {
+      "node": "wiki_query",
+      "status": "PASS",
+      "details": {
+        "index": "wiki/index.md",
+        "wiki_entries": 19
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S01-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S02-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S02-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S03-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S03-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S04-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S04-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S05-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S05-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S06-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S06-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S07-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S07-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S08-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S08-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S09-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S09-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S10-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S10-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S10-03",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S11-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S11-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S11-03",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S12-01",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S12-02",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "fidelity_check",
+      "status": "PASS",
+      "details": {
+        "card_id": "CARD-S12-03",
+        "corrections": 0,
+        "mode": "literal_excerpt_and_metadata"
+      }
+    },
+    {
+      "node": "coverage_check",
+      "status": "PASS",
+      "details": {
+        "slides_checked": 12,
+        "slides_covered": 12
+      }
+    },
+    {
+      "node": "evidence_cards",
+      "status": "PASS",
+      "details": {
+        "cards_generated": 26
+      }
+    },
+    {
+      "node": "outline_check",
+      "status": "PASS",
+      "details": {
+        "slides": 12,
+        "issues": []
+      }
+    },
+    {
+      "node": "human_outline_approval",
+      "status": "PENDING",
+      "details": {
+        "next_stage": "Phase 4 after approval"
+      }
+    }
+  ],
+  "corrections": [],
+  "source_count": 5,
+  "wiki_entry_count": 19,
+  "max_corrections_per_issue": 3,
+  "scope": "evidence_and_outline_only",
+  "summary": {
+    "passed": true,
+    "cards_generated": 26,
+    "slides_covered": 12,
+    "slides_total": 12,
+    "requery_attempts": 0,
+    "corrections": 0,
+    "errors": [],
+    "human_review": "PENDING",
+    "html": "NOT_CREATED"
+  }
+}

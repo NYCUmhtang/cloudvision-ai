@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S07-01",
+  "slide_number": 7,
+  "slide_title": "傳統方法：Fmask 4.0",
+  "teaching_objective": "認識規則式雲影判釋",
+  "wiki_id": "W-M04-001",
+  "wiki_title": "Fmask 4.0 整體流程",
+  "wiki_path": "wiki/W-M04-001.md",
+  "wiki_sha256": "96138db22b26ffe1c3ab3a08ca2b4e5f8bb0e7d861b0a31d0ee07d4997e3e147",
+  "source_ids": [
+    "P02"
+  ],
+  "source_pages": "1–6",
+  "evidence_sections": {
+    "基礎說明與知識整理": "Fmask（Function of Mask）是結合光譜閾值、統計、輔助地理資料與雲影幾何的雲影偵測方法。Fmask 4.0 可用於 Landsat 4–8 與 Sentinel-2，並在辨識雲、雲影、雪／冰與地表時結合不同訊息。",
+    "主要處理步驟": "1. 使用 GSWO 與 DEM 等輔助資訊改進陸水判別及高程相關修正。\n2. 利用光譜特徵計算潛在雲像元與雲機率。\n3. 以光譜－空間脈絡判斷雪／冰與亮地表誤判。\n4. 將可能的雲影與雲及投影幾何關聯，輸出遮罩。",
+    "重要限制": "論文清楚指出 Fmask 4.0 的雲影部分沿用先前 MFmask 方法，不應把雲影幾何演算法描述成 Fmask 4.0 全新發明。"
+  },
+  "evidence_sha256": "172cb82cd9a891061b848d30ae38c41a5e4d8b93b739e2f4bf09c7a2dc87aba1",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

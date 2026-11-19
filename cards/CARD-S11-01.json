@@ -1,0 +1,22 @@
+{
+  "card_id": "CARD-S11-01",
+  "slide_number": 11,
+  "slide_title": "怎樣評估辨識品質？",
+  "teaching_objective": "知道評估指標需要配合資料集與條件",
+  "wiki_id": "W-M06-001",
+  "wiki_title": "雲影偵測評估指標",
+  "wiki_path": "wiki/W-M06-001.md",
+  "wiki_sha256": "0827bd6844c20f65fc703a755a554b2e8ded2338e020f516c42d06bfb4b4e4e9",
+  "source_ids": [
+    "P01",
+    "P02"
+  ],
+  "source_pages": "18–20",
+  "evidence_sections": {
+    "基礎說明與知識整理": "雲影偵測可以比較模型預測遮罩和人工或參考資料建立混淆矩陣，再計算 Overall Accuracy、Precision、Recall、F1、IoU 等指標。不同資料集可能採用不同類別合併方式及評估樣本，不能把準確率直接等同。",
+    "進階重點": "- Overall Accuracy 容易受類別比例影響。\n- Producer’s Accuracy 通常對應以參考類別為分母的召回率；User’s Accuracy 以預測類別為分母，常對應 Precision，但必須先確認混淆矩陣方向。\n- 需分開檢查雲與雲影類別，避免整體準確率掩蓋雲影漏偵。",
+    "比較原則": "跨研究比較時，先確認感測器、標註類別、樣本和混淆矩陣的計算方式。"
+  },
+  "evidence_sha256": "866bcaa859a7630d6fba74d409d7e0914f7b4cc2d299e97aff1e626ec459f526",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

@@ -1,0 +1,854 @@
+{
+  "schema": 1,
+  "status": "phase4_draft_pending_human_approval",
+  "sources": {
+    "P01": "https://doi.org/10.3390/geomatics5030027",
+    "P02": "https://doi.org/10.1016/j.rse.2019.05.024",
+    "P03": "https://doi.org/10.1038/s41597-022-01878-2",
+    "P04": "https://doi.org/10.3390/rs16234583",
+    "P05": "https://doi.org/10.1016/j.rse.2024.114122"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "CloudVision AI：學習目標",
+      "wiki_ids": [
+        "W-M01-001"
+      ],
+      "query": "衛星光學遙測 雲影 問題",
+      "objective": "知道本次簡報要解決什麼問題",
+      "headline": "先看懂衛星影像中的雲與陰影",
+      "lead": "你會學會辨識四類像元、理解規則式與 AI 分割，以及判讀評估指標。",
+      "bullets": [
+        "我們想要的是可信的「清晰像元」，而不只是漂亮的影像。",
+        "每一頁都可以查看原始 Wiki 條目與論文來源。"
+      ],
+      "caveat": "這份簡報是文獻知識教學，不會執行任何雲偵測模型。",
+      "cards": [
+        {
+          "card_id": "CARD-S01-01",
+          "slide_number": 1,
+          "slide_title": "CloudVision AI：學習目標",
+          "teaching_objective": "知道本次簡報要解決什麼問題",
+          "wiki_id": "W-M01-001",
+          "wiki_title": "光學遙測與雲影問題",
+          "wiki_path": "wiki/W-M01-001.md",
+          "wiki_sha256": "6167919f1fca1cdf904487a7727bc36618d9837730dbd8349438bf326c413566",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "1–5, 7",
+          "evidence_sections": {
+            "基礎說明與知識整理": "光學遙測利用衛星感測器量測可見光、近紅外與短波紅外等波段，提供地表監測所需的光譜與空間資訊。雲會遮蔽地物、影響大氣校正，雲影則使地表亮度降低。若直接使用受汙染像元，土地覆蓋分類及時間序列分析可能受到影響。",
+            "進階重點": "- **TOA** 是大氣頂反射率，**BOA** 是經大氣校正得到的地表反射率；兩者不應混稱。\n- 雲偵測是識別受雲影響的像元，不等同於將雲下真實地表重建出來。\n- 雲影誤判的常見對象包括水體、地形陰影及深色岩石。",
+            "教學提示": "展示同一區域有雲／無雲影像時，要說明觀測條件差異，不宣稱演算法已恢復遮蔽地表。"
+          },
+          "evidence_sha256": "f9acf7837d1ced4427a7cb9315bae50025d2387933874e97178066b9b31b3ba7",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "雲影為何影響地表觀測？",
+      "wiki_ids": [
+        "W-M01-001",
+        "W-M02-001"
+      ],
+      "query": "雲影 地表 可用影像",
+      "objective": "理解雲與陰影對觀測資料的影響",
+      "headline": "雲遮住地表，雲影改變亮度",
+      "lead": "光學衛星的觀測常被雲遮擋；雲影讓地表變暗，可能干擾分類和變遷分析。",
+      "bullets": [
+        "雲：改變或遮蔽地表回傳的光譜訊號。",
+        "雲影：遮擋入射日光，使下方像元變暗。",
+        "雲影辨識的目的先是標示受污染像元，並非恢復看不見的地表。"
+      ],
+      "caveat": "當影像被雲遮蔽時，「偵測雲」不等於「還原真實地物」。",
+      "cards": [
+        {
+          "card_id": "CARD-S02-01",
+          "slide_number": 2,
+          "slide_title": "雲影為何影響地表觀測？",
+          "teaching_objective": "理解雲與陰影對觀測資料的影響",
+          "wiki_id": "W-M01-001",
+          "wiki_title": "光學遙測與雲影問題",
+          "wiki_path": "wiki/W-M01-001.md",
+          "wiki_sha256": "6167919f1fca1cdf904487a7727bc36618d9837730dbd8349438bf326c413566",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "1–5, 7",
+          "evidence_sections": {
+            "基礎說明與知識整理": "光學遙測利用衛星感測器量測可見光、近紅外與短波紅外等波段，提供地表監測所需的光譜與空間資訊。雲會遮蔽地物、影響大氣校正，雲影則使地表亮度降低。若直接使用受汙染像元，土地覆蓋分類及時間序列分析可能受到影響。",
+            "進階重點": "- **TOA** 是大氣頂反射率，**BOA** 是經大氣校正得到的地表反射率；兩者不應混稱。\n- 雲偵測是識別受雲影響的像元，不等同於將雲下真實地表重建出來。\n- 雲影誤判的常見對象包括水體、地形陰影及深色岩石。",
+            "教學提示": "展示同一區域有雲／無雲影像時，要說明觀測條件差異，不宣稱演算法已恢復遮蔽地表。"
+          },
+          "evidence_sha256": "f9acf7837d1ced4427a7cb9315bae50025d2387933874e97178066b9b31b3ba7",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S02-02",
+          "slide_number": 2,
+          "slide_title": "雲影為何影響地表觀測？",
+          "teaching_objective": "理解雲與陰影對觀測資料的影響",
+          "wiki_id": "W-M02-001",
+          "wiki_title": "厚雲、薄雲、雲影與清晰像元",
+          "wiki_path": "wiki/W-M02-001.md",
+          "wiki_sha256": "a2114ae26863edfaef99ab38603f0d34d09ccb9bd156be5462fde55a3273b747",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "5–8",
+          "evidence_sections": {
+            "基礎說明與知識整理": "厚雲通常較明顯遮蔽地表；薄雲仍可能讓下方地物隱約可見，但會改變光譜反射。雲影是雲遮擋日光投射到地表產生的暗區；地形陰影則主要由地勢與光照造成。清晰像元指適合既定分析用途、未被不合格雲影污染的觀測像元。",
+            "進階重點": "- 論文用不透明度敘述厚雲與薄雲，作為該文獻的分類解釋；不同資料集的標註規則未必一致。\n- 類別設計可包含厚雲、薄雲、雲影及地表；不應把「薄雲」和「高雲」視為同義詞。\n- 水體、地形陰影和深色地表可能與雲影混淆。",
+            "注意": "清晰像元的判定依研究用途與標籤定義；部分薄雲可能降低定量分析品質。"
+          },
+          "evidence_sha256": "48b96f79e711b4ce2f63eb6158b85c91b0a27df7e96f96e2ab7b27e5f044a581",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "衛星如何觀測地球？",
+      "wiki_ids": [
+        "W-M03-001",
+        "W-M01-001"
+      ],
+      "query": "衛星 光學 多光譜 波段",
+      "objective": "認識光學影像和不同波段",
+      "headline": "多個波段，觀察同一個地方",
+      "lead": "光學遙測不只有 RGB。可見光、近紅外與短波紅外提供互補資訊。",
+      "bullets": [
+        "RGB：人眼較容易理解的彩色組合。",
+        "NIR：近紅外資訊；SWIR：短波紅外資訊。",
+        "不同衛星的波段數量與解析度不同，演算法需要考慮這些差異。"
+      ],
+      "caveat": "Sentinel-2 的不同波段具有 10、20、60 m 的不同解析度。",
+      "cards": [
+        {
+          "card_id": "CARD-S03-01",
+          "slide_number": 3,
+          "slide_title": "衛星如何觀測地球？",
+          "teaching_objective": "認識光學影像和不同波段",
+          "wiki_id": "W-M03-001",
+          "wiki_title": "多光譜與感測器波段差異",
+          "wiki_path": "wiki/W-M03-001.md",
+          "wiki_sha256": "c0236c8bcd74deac3f39399d351a6514c78b2bae37a07d6e78301f183c45075f",
+          "source_ids": [
+            "P01",
+            "P02"
+          ],
+          "source_pages": "3, 9–10",
+          "evidence_sections": {
+            "基礎說明與知識整理": "多光譜影像利用多個波段辨識地物。RGB 是可見光三波段；NIR、SWIR 和捲雲（Cirrus）波段可提供不同光譜特徵，協助區分雲、雪和亮地表。",
+            "進階重點": "- Sentinel-2 MSI 提供 10、20、60 m 等不同空間解析度的波段，演算法使用前須依需求處理解析度差異。\n- Sentinel-2 沒有熱紅外波段，與 Landsat 8 的輸入條件不同。\n- 不可把適用於 Sentinel-2 全波段的 Fmask 程序直接宣稱適合只提供 RGB 的感測器。"
+          },
+          "evidence_sha256": "34cb99c93342d9892efecdcfde8b5376bf10a002553cf6ec0478d909fbdd9aa3",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S03-02",
+          "slide_number": 3,
+          "slide_title": "衛星如何觀測地球？",
+          "teaching_objective": "認識光學影像和不同波段",
+          "wiki_id": "W-M01-001",
+          "wiki_title": "光學遙測與雲影問題",
+          "wiki_path": "wiki/W-M01-001.md",
+          "wiki_sha256": "6167919f1fca1cdf904487a7727bc36618d9837730dbd8349438bf326c413566",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "1–5, 7",
+          "evidence_sections": {
+            "基礎說明與知識整理": "光學遙測利用衛星感測器量測可見光、近紅外與短波紅外等波段，提供地表監測所需的光譜與空間資訊。雲會遮蔽地物、影響大氣校正，雲影則使地表亮度降低。若直接使用受汙染像元，土地覆蓋分類及時間序列分析可能受到影響。",
+            "進階重點": "- **TOA** 是大氣頂反射率，**BOA** 是經大氣校正得到的地表反射率；兩者不應混稱。\n- 雲偵測是識別受雲影響的像元，不等同於將雲下真實地表重建出來。\n- 雲影誤判的常見對象包括水體、地形陰影及深色岩石。",
+            "教學提示": "展示同一區域有雲／無雲影像時，要說明觀測條件差異，不宣稱演算法已恢復遮蔽地表。"
+          },
+          "evidence_sha256": "f9acf7837d1ced4427a7cb9315bae50025d2387933874e97178066b9b31b3ba7",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P02"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "厚雲、薄雲與雲影的差異",
+      "wiki_ids": [
+        "W-M02-003",
+        "W-M02-001"
+      ],
+      "query": "厚雲 薄雲 雲影 清晰像元",
+      "objective": "分辨四個常用的標註類別",
+      "headline": "四類像元，不只「有雲／沒雲」",
+      "lead": "CloudSEN12 使用 Clear、Thick Cloud、Thin Cloud、Cloud Shadow 四類標籤。",
+      "bullets": [
+        "Clear：無雲及雲影污染的像元。",
+        "Thick Cloud：遮蔽地表的厚雲。",
+        "Thin Cloud：仍可能看見背景，但光譜已改變。",
+        "Cloud Shadow：厚雲或薄雲投射的暗區。"
+      ],
+      "caveat": "厚薄雲沒有跨所有資料集都一致的定量界線；先看採用的標註規則。",
+      "cards": [
+        {
+          "card_id": "CARD-S04-01",
+          "slide_number": 4,
+          "slide_title": "厚雲、薄雲與雲影的差異",
+          "teaching_objective": "分辨四個常用的標註類別",
+          "wiki_id": "W-M02-003",
+          "wiki_title": "CloudSEN12 的四類雲影語意標籤",
+          "wiki_path": "wiki/W-M02-003.md",
+          "wiki_sha256": "5f812c0e57096e79bfe862645725b7e31604e3e848fbb48195380f9f1648bf60",
+          "source_ids": [
+            "P03"
+          ],
+          "source_pages": "P03 PDF p.5，Table 3",
+          "evidence_sections": {
+            "基礎說明": "CloudSEN12 把像元標成 Clear、Thick Cloud、Thin Cloud、Cloud Shadow 四類，並定義「有效／無效」與「雲／非雲」的聚合類別。",
+            "進階重點": "- Clear 為無雲和雲影污染的像元（code 0）。\n- Thick Cloud（code 1）遮蔽地表反射訊號；Thin Cloud（code 2）會改變地表光譜但仍有部分背景可辨。\n- Cloud Shadow（code 3）是厚雲或薄雲在地表投射的暗像元；在雲／非雲二元測試屬非雲，但在有效／無效測試屬無效。",
+            "文獻差異、適用條件及限制": "P03 PDF p.1 提醒厚雲與薄雲間尚無普遍一致的定量分界，不能把單一資料集標籤規則說成自然界絕對標準。"
+          },
+          "evidence_sha256": "8f4bcb70a4e0143accc40417a8768bb521f0c911e0f9c6410f01ba4226f6bfb0",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S04-02",
+          "slide_number": 4,
+          "slide_title": "厚雲、薄雲與雲影的差異",
+          "teaching_objective": "分辨四個常用的標註類別",
+          "wiki_id": "W-M02-001",
+          "wiki_title": "厚雲、薄雲、雲影與清晰像元",
+          "wiki_path": "wiki/W-M02-001.md",
+          "wiki_sha256": "a2114ae26863edfaef99ab38603f0d34d09ccb9bd156be5462fde55a3273b747",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "5–8",
+          "evidence_sections": {
+            "基礎說明與知識整理": "厚雲通常較明顯遮蔽地表；薄雲仍可能讓下方地物隱約可見，但會改變光譜反射。雲影是雲遮擋日光投射到地表產生的暗區；地形陰影則主要由地勢與光照造成。清晰像元指適合既定分析用途、未被不合格雲影污染的觀測像元。",
+            "進階重點": "- 論文用不透明度敘述厚雲與薄雲，作為該文獻的分類解釋；不同資料集的標註規則未必一致。\n- 類別設計可包含厚雲、薄雲、雲影及地表；不應把「薄雲」和「高雲」視為同義詞。\n- 水體、地形陰影和深色地表可能與雲影混淆。",
+            "注意": "清晰像元的判定依研究用途與標籤定義；部分薄雲可能降低定量分析品質。"
+          },
+          "evidence_sha256": "48b96f79e711b4ce2f63eb6158b85c91b0a27df7e96f96e2ab7b27e5f044a581",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P03"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "雲影不等於地形陰影",
+      "wiki_ids": [
+        "W-M04-003",
+        "W-M02-001"
+      ],
+      "query": "雲影 地形陰影",
+      "objective": "辨識不同陰影的成因",
+      "headline": "暗的地方不一定是雲影",
+      "lead": "雲影與地形陰影在光學影像都可能看起來很暗，但成因並不相同。",
+      "bullets": [
+        "雲影要考慮雲的位置與太陽幾何。",
+        "地形陰影與山坡坡度、坡向及照明方向有關。",
+        "Fmask 類方法利用光譜、雲影投影關係以及 DEM 等資訊降低誤判。"
+      ],
+      "caveat": "水體、深色岩石也可能被誤判為雲影。",
+      "cards": [
+        {
+          "card_id": "CARD-S05-01",
+          "slide_number": 5,
+          "slide_title": "雲影不等於地形陰影",
+          "teaching_objective": "辨識不同陰影的成因",
+          "wiki_id": "W-M04-003",
+          "wiki_title": "雲影與地形暗區的區別",
+          "wiki_path": "wiki/W-M04-003.md",
+          "wiki_sha256": "e74d61b7c8d9841cfe7070807e987faa4e671db1692c8fb7734aadb7c60a6ddf",
+          "source_ids": [
+            "P02"
+          ],
+          "source_pages": "2, 5–6, 17",
+          "evidence_sections": {
+            "基礎說明與知識整理": "雲影和地形陰影在光學影像都可能呈現低亮度。Fmask 類方法除了利用暗像元特徵，還考慮雲的位置、太陽－感測器幾何關係與 DEM／坡度／坡向等地形資訊，以減少錯誤。",
+            "進階重點": "- 雲影可能需要對應雲體投影形狀與方向，暗區不一定代表雲影。\n- 地勢起伏影響投影與亮度，因此高山場景需要更多地形資訊。\n- P02 指明 Fmask 4.0 雲影部分承襲 MFmask，請勿誇大為全新模型。"
+          },
+          "evidence_sha256": "a5b33d2458877a06caa6dc28b7e4db010c61d73dc3e3a3a6fac30fbd069d1665",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S05-02",
+          "slide_number": 5,
+          "slide_title": "雲影不等於地形陰影",
+          "teaching_objective": "辨識不同陰影的成因",
+          "wiki_id": "W-M02-001",
+          "wiki_title": "厚雲、薄雲、雲影與清晰像元",
+          "wiki_path": "wiki/W-M02-001.md",
+          "wiki_sha256": "a2114ae26863edfaef99ab38603f0d34d09ccb9bd156be5462fde55a3273b747",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "5–8",
+          "evidence_sections": {
+            "基礎說明與知識整理": "厚雲通常較明顯遮蔽地表；薄雲仍可能讓下方地物隱約可見，但會改變光譜反射。雲影是雲遮擋日光投射到地表產生的暗區；地形陰影則主要由地勢與光照造成。清晰像元指適合既定分析用途、未被不合格雲影污染的觀測像元。",
+            "進階重點": "- 論文用不透明度敘述厚雲與薄雲，作為該文獻的分類解釋；不同資料集的標註規則未必一致。\n- 類別設計可包含厚雲、薄雲、雲影及地表；不應把「薄雲」和「高雲」視為同義詞。\n- 水體、地形陰影和深色地表可能與雲影混淆。",
+            "注意": "清晰像元的判定依研究用途與標籤定義；部分薄雲可能降低定量分析品質。"
+          },
+          "evidence_sha256": "48b96f79e711b4ce2f63eb6158b85c91b0a27df7e96f96e2ab7b27e5f044a581",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P02"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "多光譜影像提供什麼線索？",
+      "wiki_ids": [
+        "W-M03-001",
+        "W-M03-002"
+      ],
+      "query": "RGB NIR SWIR 多光譜 波段",
+      "objective": "理解判釋會使用哪些資訊",
+      "headline": "光譜資訊像多把不同的尺",
+      "lead": "利用 RGB、NIR、SWIR 等不同波段組合，可以提升判釋的資訊量。",
+      "bullets": [
+        "單一亮度門檻容易把雪、亮屋頂等誤當成雲。",
+        "Sentinel-2 含多個不同解析度的光譜波段。",
+        "影像若只有 RGB，不代表能直接沿用需要額外波段的演算法。"
+      ],
+      "caveat": "本頁色帶是波段概念示意，不代表真實感測器光譜曲線。",
+      "cards": [
+        {
+          "card_id": "CARD-S06-01",
+          "slide_number": 6,
+          "slide_title": "多光譜影像提供什麼線索？",
+          "teaching_objective": "理解判釋會使用哪些資訊",
+          "wiki_id": "W-M03-001",
+          "wiki_title": "多光譜與感測器波段差異",
+          "wiki_path": "wiki/W-M03-001.md",
+          "wiki_sha256": "c0236c8bcd74deac3f39399d351a6514c78b2bae37a07d6e78301f183c45075f",
+          "source_ids": [
+            "P01",
+            "P02"
+          ],
+          "source_pages": "3, 9–10",
+          "evidence_sections": {
+            "基礎說明與知識整理": "多光譜影像利用多個波段辨識地物。RGB 是可見光三波段；NIR、SWIR 和捲雲（Cirrus）波段可提供不同光譜特徵，協助區分雲、雪和亮地表。",
+            "進階重點": "- Sentinel-2 MSI 提供 10、20、60 m 等不同空間解析度的波段，演算法使用前須依需求處理解析度差異。\n- Sentinel-2 沒有熱紅外波段，與 Landsat 8 的輸入條件不同。\n- 不可把適用於 Sentinel-2 全波段的 Fmask 程序直接宣稱適合只提供 RGB 的感測器。"
+          },
+          "evidence_sha256": "34cb99c93342d9892efecdcfde8b5376bf10a002553cf6ec0478d909fbdd9aa3",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S06-02",
+          "slide_number": 6,
+          "slide_title": "多光譜影像提供什麼線索？",
+          "teaching_objective": "理解判釋會使用哪些資訊",
+          "wiki_id": "W-M03-002",
+          "wiki_title": "資料集的波段、解析度及跨感測器限制",
+          "wiki_path": "wiki/W-M03-002.md",
+          "wiki_sha256": "824d0377b80e1c6cdf570325c4bf85029a5a5e919d9ba91c350c7da5aa3cc2e2",
+          "source_ids": [
+            "P03",
+            "P04"
+          ],
+          "source_pages": "P03 PDF pp.3–4，Table 2；P04 PDF pp.7–9，Table 1",
+          "evidence_sections": {
+            "基礎說明": "同樣叫「衛星雲偵測」，不同資料集的感測器、波段、解析度和標註方式可能差異很大。",
+            "進階重點": "- CloudSEN12 包含 Sentinel-2 的 L1C／L2A、多光譜波段及 Sentinel-1 VV/VH 與其他輔助資料。\n- P04 Table 1 彙整各種開放資料集，其中包括 Sentinel-2、Landsat、PlanetScope 等，但不代表每個方法都可直接使用全部感測器。\n- 高反射地表和地形陰影是雲、雲影辨識的困難場景；少波段或跨感測器應用時，必須重新檢驗性能。",
+            "文獻差異、適用條件及限制": "P03 Table 2 資料描述屬 CloudSEN12 資產規格；P04 Table 1 是跨資料集彙整。勿把其中任一組波段當作所有模型固定輸入。"
+          },
+          "evidence_sha256": "ad9410e31fd43a8e15cbffd6649367c4d0a6f98b50de1ab3bb9304b339c56d8d",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P02",
+        "P03",
+        "P04"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "傳統方法：Fmask 4.0",
+      "wiki_ids": [
+        "W-M04-001",
+        "W-M04-002"
+      ],
+      "query": "Fmask 閾值 HOT DEM",
+      "objective": "認識規則式雲影判釋",
+      "headline": "Fmask 4.0：由規則到遮罩",
+      "lead": "Fmask 4.0 結合光譜閾值、輔助地理資料、雲機率與雲影幾何推估。",
+      "bullets": [
+        "輸入 TOA 反射率及 GSWO、DEM 等輔助資訊。",
+        "計算潛在雲與雪／冰等候選像元。",
+        "用雲與太陽的幾何關係尋找可能雲影。",
+        "輸出雲、雲影等遮罩，仍可能發生漏判或誤判。"
+      ],
+      "caveat": "Fmask 並非深度學習模型；其不同感測器版本的輸入條件也不相同。",
+      "cards": [
+        {
+          "card_id": "CARD-S07-01",
+          "slide_number": 7,
+          "slide_title": "傳統方法：Fmask 4.0",
+          "teaching_objective": "認識規則式雲影判釋",
+          "wiki_id": "W-M04-001",
+          "wiki_title": "Fmask 4.0 整體流程",
+          "wiki_path": "wiki/W-M04-001.md",
+          "wiki_sha256": "96138db22b26ffe1c3ab3a08ca2b4e5f8bb0e7d861b0a31d0ee07d4997e3e147",
+          "source_ids": [
+            "P02"
+          ],
+          "source_pages": "1–6",
+          "evidence_sections": {
+            "基礎說明與知識整理": "Fmask（Function of Mask）是結合光譜閾值、統計、輔助地理資料與雲影幾何的雲影偵測方法。Fmask 4.0 可用於 Landsat 4–8 與 Sentinel-2，並在辨識雲、雲影、雪／冰與地表時結合不同訊息。",
+            "主要處理步驟": "1. 使用 GSWO 與 DEM 等輔助資訊改進陸水判別及高程相關修正。\n2. 利用光譜特徵計算潛在雲像元與雲機率。\n3. 以光譜－空間脈絡判斷雪／冰與亮地表誤判。\n4. 將可能的雲影與雲及投影幾何關聯，輸出遮罩。",
+            "重要限制": "論文清楚指出 Fmask 4.0 的雲影部分沿用先前 MFmask 方法，不應把雲影幾何演算法描述成 Fmask 4.0 全新發明。"
+          },
+          "evidence_sha256": "172cb82cd9a891061b848d30ae38c41a5e4d8b93b739e2f4bf09c7a2dc87aba1",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S07-02",
+          "slide_number": 7,
+          "slide_title": "傳統方法：Fmask 4.0",
+          "teaching_objective": "認識規則式雲影判釋",
+          "wiki_id": "W-M04-002",
+          "wiki_title": "Fmask 4.0 的 HOT、DEM 與 GSWO",
+          "wiki_path": "wiki/W-M04-002.md",
+          "wiki_sha256": "3f60bdb56f8f405e79e0da307380c74f5bf3851da9e376acbcd10899bb431d67",
+          "source_ids": [
+            "P02"
+          ],
+          "source_pages": "5–9",
+          "evidence_sections": {
+            "基礎說明與知識整理": "Fmask 4.0 的三項重要改善包括輔助資料整合、新雲機率、光譜－脈絡辨識。GSWO 改善水陸判別，DEM 幫助處理高程造成的熱紅外／捲雲波段變化。因 Sentinel-2 缺少熱紅外波段，論文使用 HOT-based cloud probability 補充低雲判識資訊。",
+            "進階重點": "- HOT 使用藍光及紅光波段的 TOA 反射率；詳細公式見 P02 §3.2.2。\n- Fmask 4.0 對 Sentinel-2 的 cirrus cloud probability 在組合式中給予 0.5 權重；這是研究方法參數而非普遍最佳值。\n- SCSI 結合 NDSI 與綠光局部標準差，改善大範圍雪／冰與雲之判別。\n- 遮罩後處理使用形態學侵蝕與膨脹降低亮地表誤判，但可能漏掉小雲。"
+          },
+          "evidence_sha256": "86171201e3921160b460528e062d6904b9974bd1937a853a7d92593a4403fd3d",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P02"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "AI 如何做像元語意分割？",
+      "wiki_ids": [
+        "W-M05-001",
+        "W-M05-003"
+      ],
+      "query": "深度學習 語意分割 CNN",
+      "objective": "區分傳統方法和模型式分類",
+      "headline": "AI：幫影像中每個像元貼標籤",
+      "lead": "語意分割（Semantic Segmentation）讓模型對每一個像元輸出類別。",
+      "bullets": [
+        "訓練資料提供輸入影像及參考標籤。",
+        "CNN 或 Encoder–Decoder 網路學習空間與光譜特徵。",
+        "模型輸出遮罩，仍需要透過獨立測試資料評估。"
+      ],
+      "caveat": "AI 表現與訓練資料、感測器、雲型及測試方式相關。",
+      "cards": [
+        {
+          "card_id": "CARD-S08-01",
+          "slide_number": 8,
+          "slide_title": "AI 如何做像元語意分割？",
+          "teaching_objective": "區分傳統方法和模型式分類",
+          "wiki_id": "W-M05-001",
+          "wiki_title": "傳統方法、機器學習與深度學習",
+          "wiki_path": "wiki/W-M05-001.md",
+          "wiki_sha256": "0770a41cec2e1bbd2c2c88e5bdef2180f81eb7e6348eba574fb74f48b5081ccd",
+          "source_ids": [
+            "P01",
+            "P02"
+          ],
+          "source_pages": "15–19",
+          "evidence_sections": {
+            "基礎說明與知識整理": "雲偵測可以依方法分成閾值規則、傳統機器學習與深度學習。Fmask 代表使用光譜規則和脈絡條件的傳統方法；SVM 與隨機森林使用特徵及標註資料分類；CNN 和 U-Net 等深度學習模型可學習空間與光譜特徵並輸出像元分類。",
+            "進階重點": "- U-Net 採用編碼器－解碼器結構進行像元級語意分割。\n- ViT 類方法可建模長距離關係，但計算資源需求可能較高。\n- 訓練資料的地景、雲型、感測器以及測試方法影響表現；不得只用單篇的 Accuracy 宣稱某方法一定最好。",
+            "保留差異": "P01 是跨研究的總論，P02 是 Fmask 4.0 具體實驗；其評估結果不能當成相同資料集上的 AI 與 Fmask 直接比較。"
+          },
+          "evidence_sha256": "7009bf14373a347856fa4bd9c379ae1ddeb9c6a476709a836f720eff4ce9ad8c",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S08-02",
+          "slide_number": 8,
+          "slide_title": "AI 如何做像元語意分割？",
+          "teaching_objective": "區分傳統方法和模型式分類",
+          "wiki_id": "W-M05-003",
+          "wiki_title": "深度學習雲偵測的主要網路架構",
+          "wiki_path": "wiki/W-M05-003.md",
+          "wiki_sha256": "a4bb3f5ef814561d502614ec46253987f2a521ce293643556bb4464f16a27ac8",
+          "source_ids": [
+            "P04"
+          ],
+          "source_pages": "P04 PDF pp.2–3、10–12，§1、§4.1–4.2",
+          "evidence_sections": {
+            "基礎說明": "深度學習常將雲偵測視為語意分割，模型對輸入影像的每個像元預測類別。",
+            "進階重點": "- FCN 使用卷積與上採樣進行像元級分類；Encoder–Decoder（如 U-Net）將語意抽取與空間定位結合。\n- Attention 機制使模型更重視重要區域；GAN 在某些研究中輔助產生訓練資料。\n- 各模型的效果與資料來源、解析度、訓練標籤和測試設計相關；不能單依模型名稱或單篇 OA 判定全面優劣。",
+            "文獻差異、適用條件及限制": "P04 是綜述，不等同其作者自行重新訓練並公平比較每一個列出的架構。"
+          },
+          "evidence_sha256": "1b211c31ae274c34689dfacbf2ca005312f599df3c97e204d39680b33a4c8ec9",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P02",
+        "P04"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "U-Net 與 CloudS2Mask",
+      "wiki_ids": [
+        "W-M05-003",
+        "W-M05-004"
+      ],
+      "query": "U-Net CloudS2Mask 模型",
+      "objective": "認識常見架構和訓練概念",
+      "headline": "U-Net 與 CloudS2Mask",
+      "lead": "U-Net 採編碼器–解碼器架構；CloudS2Mask 結合 U-Net 與 RegNetY_006。",
+      "bullets": [
+        "先使用三類資料學習，再遷移學習到四類標籤。",
+        "逐步調整影像尺寸（Progressive Resizing）。",
+        "可用集成與測試時增強改善表現，但會增加成本。"
+      ],
+      "caveat": "這是論文所描述的模型，不代表本作業已重新訓練或執行。",
+      "cards": [
+        {
+          "card_id": "CARD-S09-01",
+          "slide_number": 9,
+          "slide_title": "U-Net 與 CloudS2Mask",
+          "teaching_objective": "認識常見架構和訓練概念",
+          "wiki_id": "W-M05-003",
+          "wiki_title": "深度學習雲偵測的主要網路架構",
+          "wiki_path": "wiki/W-M05-003.md",
+          "wiki_sha256": "a4bb3f5ef814561d502614ec46253987f2a521ce293643556bb4464f16a27ac8",
+          "source_ids": [
+            "P04"
+          ],
+          "source_pages": "P04 PDF pp.2–3、10–12，§1、§4.1–4.2",
+          "evidence_sections": {
+            "基礎說明": "深度學習常將雲偵測視為語意分割，模型對輸入影像的每個像元預測類別。",
+            "進階重點": "- FCN 使用卷積與上採樣進行像元級分類；Encoder–Decoder（如 U-Net）將語意抽取與空間定位結合。\n- Attention 機制使模型更重視重要區域；GAN 在某些研究中輔助產生訓練資料。\n- 各模型的效果與資料來源、解析度、訓練標籤和測試設計相關；不能單依模型名稱或單篇 OA 判定全面優劣。",
+            "文獻差異、適用條件及限制": "P04 是綜述，不等同其作者自行重新訓練並公平比較每一個列出的架構。"
+          },
+          "evidence_sha256": "1b211c31ae274c34689dfacbf2ca005312f599df3c97e204d39680b33a4c8ec9",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S09-02",
+          "slide_number": 9,
+          "slide_title": "U-Net 與 CloudS2Mask",
+          "teaching_objective": "認識常見架構和訓練概念",
+          "wiki_id": "W-M05-004",
+          "wiki_title": "CloudS2Mask 的模型、訓練及四類輸出",
+          "wiki_path": "wiki/W-M05-004.md",
+          "wiki_sha256": "b8bc434f7ee4e401f97bb4a2b9057469d586840556cb9f2bae89d2ab898ade7b",
+          "source_ids": [
+            "P05"
+          ],
+          "source_pages": "P05 PDF pp.1–5，§2.1–2.5、Table 2、Figure 2",
+          "evidence_sections": {
+            "基礎說明": "CloudS2Mask 是針對 Sentinel-2 的雲與雲影偵測開源深度學習方法，利用 U-Net 結構與 RegNetY_006 backbone 進行像元分割。",
+            "進階重點": "- 訓練先以標準化後的三類資料（clear、cloud、shadow）學習，再透過 transfer learning 在 CloudSEN12 的四類標籤上微調，區分 clear、thin cloud、thick cloud、shadow。\n- 使用 Progressive Resizing、Hard Fine-tuning、Model Ensembling 和 Test Time Augmentation 等技術。\n- 論文測試涵蓋 CloudSEN12 與 PixBox，明確區分來源資料、訓練集、驗證集和測試集。",
+            "文獻差異、適用條件及限制": "這是論文描述的作者實驗結果，本專案未實際運行 CloudS2Mask 或重訓模型。"
+          },
+          "evidence_sha256": "5737fead7f245fd3cd1d7584dca6657a2a3e5eaf0c2c38d4fd7f44e9a6e10b13",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P04",
+        "P05"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "雲影遮罩與影像切換案例",
+      "wiki_ids": [
+        "W-M02-002",
+        "W-M02-003",
+        "W-M05-005"
+      ],
+      "query": "原始影像 分類 遮罩 切塊",
+      "objective": "理解遮罩的形式及可視化方式",
+      "headline": "把同一張影像換成不同遮罩",
+      "lead": "雲影遮罩可以是二元，也可以是多類別；兩者定義必須說清楚。",
+      "bullets": [
+        "二元遮罩可能只標「雲／非雲」，也可能將雲影合併為污染類。",
+        "多類別遮罩可以分別保留厚雲、薄雲、雲影及清晰像元。",
+        "大型場景可切為 patches 推論，但切塊邊界需要仔細合併。"
+      ],
+      "caveat": "下方互動為人工繪製的概念圖，不是模型推論，也不是實際衛星照片。",
+      "cards": [
+        {
+          "card_id": "CARD-S10-01",
+          "slide_number": 10,
+          "slide_title": "雲影遮罩與影像切換案例",
+          "teaching_objective": "理解遮罩的形式及可視化方式",
+          "wiki_id": "W-M02-002",
+          "wiki_title": "二元與多類別雲影遮罩",
+          "wiki_path": "wiki/W-M02-002.md",
+          "wiki_sha256": "acf3b9caccf69d01b0191b7b155c3e0c9db034d0a62dd3d675eff7b66c81e832",
+          "source_ids": [
+            "P01"
+          ],
+          "source_pages": "7–8",
+          "evidence_sections": {
+            "基礎說明與知識整理": "雲遮罩（Cloud Mask）是與影像像元對應的分類結果。**二元遮罩**可能只分雲／非雲，或把雲與雲影合併為污染／未污染；兩種定義不可混淆。**多類別遮罩**可以分別標記厚雲、薄雲、雲影與清晰地表。",
+            "進階重點": "- 不同資料集的像元數值及類別編碼可能不同，整合前必須讀取原始標籤表。\n- 從多類別轉成二元時，必須記錄合併規則；否則模型比較會不公平。\n- 論文 Figure 4 的顏色範例並非通用的全球標準。"
+          },
+          "evidence_sha256": "133ca114424abe6b0de965894f37b8e80ddd1cf6b9c45b949a1301765f22c78d",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S10-02",
+          "slide_number": 10,
+          "slide_title": "雲影遮罩與影像切換案例",
+          "teaching_objective": "理解遮罩的形式及可視化方式",
+          "wiki_id": "W-M02-003",
+          "wiki_title": "CloudSEN12 的四類雲影語意標籤",
+          "wiki_path": "wiki/W-M02-003.md",
+          "wiki_sha256": "5f812c0e57096e79bfe862645725b7e31604e3e848fbb48195380f9f1648bf60",
+          "source_ids": [
+            "P03"
+          ],
+          "source_pages": "P03 PDF p.5，Table 3",
+          "evidence_sections": {
+            "基礎說明": "CloudSEN12 把像元標成 Clear、Thick Cloud、Thin Cloud、Cloud Shadow 四類，並定義「有效／無效」與「雲／非雲」的聚合類別。",
+            "進階重點": "- Clear 為無雲和雲影污染的像元（code 0）。\n- Thick Cloud（code 1）遮蔽地表反射訊號；Thin Cloud（code 2）會改變地表光譜但仍有部分背景可辨。\n- Cloud Shadow（code 3）是厚雲或薄雲在地表投射的暗像元；在雲／非雲二元測試屬非雲，但在有效／無效測試屬無效。",
+            "文獻差異、適用條件及限制": "P03 PDF p.1 提醒厚雲與薄雲間尚無普遍一致的定量分界，不能把單一資料集標籤規則說成自然界絕對標準。"
+          },
+          "evidence_sha256": "8f4bcb70a4e0143accc40417a8768bb521f0c911e0f9c6410f01ba4226f6bfb0",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S10-03",
+          "slide_number": 10,
+          "slide_title": "雲影遮罩與影像切換案例",
+          "teaching_objective": "理解遮罩的形式及可視化方式",
+          "wiki_id": "W-M05-005",
+          "wiki_title": "CloudS2Mask 大影像切塊與拼接策略",
+          "wiki_path": "wiki/W-M05-005.md",
+          "wiki_sha256": "ec03de559d2f0dd2a83c4dd32cb506edb63e8dd1b602af676c7eafe5c0e644c9",
+          "source_ids": [
+            "P05"
+          ],
+          "source_pages": "P05 PDF pp.6–7，§2.6–2.7、Figures 3–6",
+          "evidence_sections": {
+            "基礎說明": "完整 Sentinel-2 場景太大，CloudS2Mask 將影像切為 patches 推論後拼接成遮罩，切塊交界處尤其容易出現空間不連續。",
+            "進階重點": "- 預設 overlap 為 128 pixels，換取較穩定的重疊區估計但增加推論量。\n- Offset Grid 將隔行切塊水平錯位半個 patch 寬，降低多個低信賴角落重疊的問題。\n- 預測合併以位置相關的權重調整 patch 邊界與角落的信心值，再平均重疊區類別機率。\n- ATTA、模型集成提升準確度通常需要更多計算成本。",
+            "文獻差異、適用條件及限制": "P05 p.10 Table 4 的 offset grid 與一般 grid 於該實驗 BOA 僅 0.922 與 0.921，不能誇大其增益。"
+          },
+          "evidence_sha256": "ff04566f75d885b3962c71c411f78000a431b2b4efa450abf83ec35f64aa35a2",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P03",
+        "P05"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "怎樣評估辨識品質？",
+      "wiki_ids": [
+        "W-M06-001",
+        "W-M06-004",
+        "W-M06-005"
+      ],
+      "query": "Precision Recall IoU BOA 評估",
+      "objective": "知道評估指標需要配合資料集與條件",
+      "headline": "不能只看一個 Accuracy",
+      "lead": "從混淆矩陣取得 TP、FP、FN、TN，再計算 Precision、Recall、F1、IoU 等指標。",
+      "bullets": [
+        "Precision：預測為目標類別的像元有多少真的屬於該類。",
+        "Recall：真實目標類別有多少被找出。",
+        "IoU：預測與真值的交集／聯集。",
+        "背景像元很多時，OA 可能掩蓋少數類別錯誤。"
+      ],
+      "caveat": "不同研究採用的 OA 與 BOA 並非同一指標。",
+      "cards": [
+        {
+          "card_id": "CARD-S11-01",
+          "slide_number": 11,
+          "slide_title": "怎樣評估辨識品質？",
+          "teaching_objective": "知道評估指標需要配合資料集與條件",
+          "wiki_id": "W-M06-001",
+          "wiki_title": "雲影偵測評估指標",
+          "wiki_path": "wiki/W-M06-001.md",
+          "wiki_sha256": "0827bd6844c20f65fc703a755a554b2e8ded2338e020f516c42d06bfb4b4e4e9",
+          "source_ids": [
+            "P01",
+            "P02"
+          ],
+          "source_pages": "18–20",
+          "evidence_sections": {
+            "基礎說明與知識整理": "雲影偵測可以比較模型預測遮罩和人工或參考資料建立混淆矩陣，再計算 Overall Accuracy、Precision、Recall、F1、IoU 等指標。不同資料集可能採用不同類別合併方式及評估樣本，不能把準確率直接等同。",
+            "進階重點": "- Overall Accuracy 容易受類別比例影響。\n- Producer’s Accuracy 通常對應以參考類別為分母的召回率；User’s Accuracy 以預測類別為分母，常對應 Precision，但必須先確認混淆矩陣方向。\n- 需分開檢查雲與雲影類別，避免整體準確率掩蓋雲影漏偵。",
+            "比較原則": "跨研究比較時，先確認感測器、標註類別、樣本和混淆矩陣的計算方式。"
+          },
+          "evidence_sha256": "866bcaa859a7630d6fba74d409d7e0914f7b4cc2d299e97aff1e626ec459f526",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S11-02",
+          "slide_number": 11,
+          "slide_title": "怎樣評估辨識品質？",
+          "teaching_objective": "知道評估指標需要配合資料集與條件",
+          "wiki_id": "W-M06-004",
+          "wiki_title": "Precision、Recall、F1、IoU 與 OA",
+          "wiki_path": "wiki/W-M06-004.md",
+          "wiki_sha256": "91f90e24d4c7469135e209f209d5033f6d6160d6932c7895bbbf8d4ff6c9a808",
+          "source_ids": [
+            "P04"
+          ],
+          "source_pages": "P04 PDF p.10，§3.2，Equations (1)–(7)",
+          "evidence_sections": {
+            "基礎說明": "雲影分割的結果通常與人工參考遮罩比較，得到 TP、FP、TN、FN，再計算 Precision、Recall、F1、IoU 與 Overall Accuracy。",
+            "進階重點": "- Precision=TP/(TP+FP)；Recall=TP/(TP+FN)。\n- F1=2×Precision×Recall/(Precision+Recall)；IoU=TP/(TP+FP+FN)。\n- OA=(TP+TN)/(TP+TN+FP+FN)；背景像元大量占比時，單看 OA 可能掩蓋少數類別錯誤。\n- 多類別評估需明確說明是 macro、micro、類別平均或逐類別；P05 的 BOA 不等於 P04 的 OA。",
+            "文獻差異、適用條件及限制": "P04 p.10 的 mIoU 公式為其文章列出的特定二元類別平均式，教學時應明確說明平均定義，避免視為所有多類別 mIoU 的唯一寫法。"
+          },
+          "evidence_sha256": "07b29d8eacc79327e86df23d8d0c3f7c1e927667ce7ce9d4be4a2d1639a942c5",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S11-03",
+          "slide_number": 11,
+          "slide_title": "怎樣評估辨識品質？",
+          "teaching_objective": "知道評估指標需要配合資料集與條件",
+          "wiki_id": "W-M06-005",
+          "wiki_title": "CloudS2Mask 的結果與速度－準確率權衡",
+          "wiki_path": "wiki/W-M06-005.md",
+          "wiki_sha256": "8d806129506dd0aff3cd1433b20de5b061ddc444d64480a45b4dbe0edb815ab4",
+          "source_ids": [
+            "P05"
+          ],
+          "source_pages": "P05 PDF pp.8–11，§3.1–3.2、Figures 7–12、Table 3",
+          "evidence_sections": {
+            "基礎說明": "CloudS2Mask 顯示如何在同一資料集與明確指標下比較多種方法與運算成本。",
+            "進階重點": "- CloudSEN12 test set 上，論文報告 10 m + ME + 7 ATTA 的 BOA：cloud/no-cloud 0.932、cloud shadow 0.918、valid/invalid 0.924（PDF p.8）。\n- PixBox 上「all types of clouds」BOA 0.930；「without thin clouds」BOA 0.964（PDF p.8）。\n- 20 m 無 ATTA 與集成版本，於所用硬體與測試流程平均單場景 2.2 秒（PDF p.10）；不可當作一般筆電的推論速度。\n- PixBox 按地物類型分析顯示 Road、Urban、Spatially mixed water/snow 等條件下 Fmask 或 s2cloudless 可能較有優勢（PDF p.8）。",
+            "文獻差異、適用條件及限制": "P02 與 P05 量測指標、場景與版本不同；比較時需同時標註測試集、BOA/OA、模型設定、硬體環境，不得直接用 94.30% OA 與 93% BOA 排序。"
+          },
+          "evidence_sha256": "a0c3994d9f38df42b9f184741b92b418a902ae21c9364598641d2807efc87769",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P01",
+        "P02",
+        "P04",
+        "P05"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "比較研究並回顧 Wiki 來源",
+      "wiki_ids": [
+        "W-M06-002",
+        "W-M06-003",
+        "W-M06-005"
+      ],
+      "query": "Fmask CloudSEN12 CloudS2Mask 比較",
+      "objective": "學會不跨資料集直接排名",
+      "headline": "比較方法前，先比較條件",
+      "lead": "Fmask、CloudSEN12 與 CloudS2Mask 提供不同類型的研究證據，不能只挑最大的數字排名。",
+      "bullets": [
+        "Fmask 4.0 在自身 Sentinel-2 驗證資料中報告 OA 94.30%。",
+        "CloudS2Mask 在 CloudSEN12 測試集報告 cloud/no-cloud BOA 0.932（10 m、ME、7 ATTA）。",
+        "兩個數字的資料、任務與指標不同，不能直接當作孰優孰劣的證據。"
+      ],
+      "caveat": "請點選「查看知識來源」，核對每項數據的論文與條目。",
+      "cards": [
+        {
+          "card_id": "CARD-S12-01",
+          "slide_number": 12,
+          "slide_title": "比較研究並回顧 Wiki 來源",
+          "teaching_objective": "學會不跨資料集直接排名",
+          "wiki_id": "W-M06-002",
+          "wiki_title": "Fmask 4.0 的具體驗證結果與限制",
+          "wiki_path": "wiki/W-M06-002.md",
+          "wiki_sha256": "dcd28b6f5e6eff848c65a34795cf7f10be98158567fb1bae6605a7b55c232b5a",
+          "source_ids": [
+            "P02"
+          ],
+          "source_pages": "13–17",
+          "evidence_sections": {
+            "基礎說明與知識整理": "在 Qiu 等人（2019）所使用的驗證資料中，Fmask 4.0 對 Landsat 4–7 的整體準確率為 **92.40%**，Fmask 3.3 為 **90.73%**；對 Landsat 8，分別為 **94.59%** 與 **93.30%**。對 Sentinel-2，Fmask 4.0 為 **94.30%**，Sen2Cor 2.5.5 為 **87.10%**。",
+            "重要限制": "- 以上數字是該論文在特定驗證樣本上的表現，不能推廣成任何地區或所有影像的必然結果。\n- Sentinel-2 的雲影 Producer’s Accuracy：Fmask 4.0 **69.64%**，Sen2Cor 2.5.5 **39.29%**；但 Sen2Cor 2.5.5 的雲影 User’s Accuracy **73.33%**，高於 Fmask 4.0 的 **62.90%**。\n- Sentinel-2 雲機率的校準部分依據從 Landsat 8 模擬的資料；作者也提到使用真實 Sentinel-2 訓練影像可改善校準。\n- P02 原文承認雲影偵測仍有漏判和偏差，不能以單一 Accuracy 取代完整評估。"
+          },
+          "evidence_sha256": "54cbb9d7a2838d1609100b13623c3e87d4d790b8014d9e5748ee355bb42e6c8f",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S12-02",
+          "slide_number": 12,
+          "slide_title": "比較研究並回顧 Wiki 來源",
+          "teaching_objective": "學會不跨資料集直接排名",
+          "wiki_id": "W-M06-003",
+          "wiki_title": "CloudSEN12 的空間切分與模型比較",
+          "wiki_path": "wiki/W-M06-003.md",
+          "wiki_sha256": "81d961ab05fbe640f6d3daa23d1096ac6bed51986c9430f9b79f5b073f5f2d6b",
+          "source_ids": [
+            "P03"
+          ],
+          "source_pages": "P03 PDF pp.8–12，§Technical Validation、Figures 8–9、Table 5",
+          "evidence_sections": {
+            "基礎說明": "比較雲影偵測模型時，必須確保訓練與測試位置盡可能獨立、類別映射一致，不能只比較單一整體準確率。",
+            "進階重點": "- 資料集採 spatially stratified block split，避免相近地點的空間自相關誇大模型表現（PDF p.8）。\n- 研究分 cloud/non-cloud、cloud shadow、valid/invalid 三種測試，並以 PA、UA、BOA 評估（PDF pp.9–10）。\n- Table 5 顯示 Fmask、Sen2Cor、KappaMask 等輸出類別與 CloudSEN12 四類標籤的對應，部分方法不輸出雲影或薄雲。\n- 文中指出薄雲與雲影是困難類別，且參考標籤本身有不確定性。",
+            "文獻差異、適用條件及限制": "這是同一個資料集／實驗框架內的比較；P02 Fmask Table 5 的 Overall Accuracy 與這裡的 BOA 定義不同，不能直接排名。"
+          },
+          "evidence_sha256": "21e361a28ea81cb6aac10934aa510ca2b4d41a136c63894f02858df9cf12b6f2",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        },
+        {
+          "card_id": "CARD-S12-03",
+          "slide_number": 12,
+          "slide_title": "比較研究並回顧 Wiki 來源",
+          "teaching_objective": "學會不跨資料集直接排名",
+          "wiki_id": "W-M06-005",
+          "wiki_title": "CloudS2Mask 的結果與速度－準確率權衡",
+          "wiki_path": "wiki/W-M06-005.md",
+          "wiki_sha256": "8d806129506dd0aff3cd1433b20de5b061ddc444d64480a45b4dbe0edb815ab4",
+          "source_ids": [
+            "P05"
+          ],
+          "source_pages": "P05 PDF pp.8–11，§3.1–3.2、Figures 7–12、Table 3",
+          "evidence_sections": {
+            "基礎說明": "CloudS2Mask 顯示如何在同一資料集與明確指標下比較多種方法與運算成本。",
+            "進階重點": "- CloudSEN12 test set 上，論文報告 10 m + ME + 7 ATTA 的 BOA：cloud/no-cloud 0.932、cloud shadow 0.918、valid/invalid 0.924（PDF p.8）。\n- PixBox 上「all types of clouds」BOA 0.930；「without thin clouds」BOA 0.964（PDF p.8）。\n- 20 m 無 ATTA 與集成版本，於所用硬體與測試流程平均單場景 2.2 秒（PDF p.10）；不可當作一般筆電的推論速度。\n- PixBox 按地物類型分析顯示 Road、Urban、Spatially mixed water/snow 等條件下 Fmask 或 s2cloudless 可能較有優勢（PDF p.8）。",
+            "文獻差異、適用條件及限制": "P02 與 P05 量測指標、場景與版本不同；比較時需同時標註測試集、BOA/OA、模型設定、硬體環境，不得直接用 94.30% OA 與 93% BOA 排序。"
+          },
+          "evidence_sha256": "a0c3994d9f38df42b9f184741b92b418a902ae21c9364598641d2807efc87769",
+          "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+        }
+      ],
+      "sources": [
+        "P02",
+        "P03",
+        "P05"
+      ]
+    }
+  ]
+}

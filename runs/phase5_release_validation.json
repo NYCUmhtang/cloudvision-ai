@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-19",
+  "tests": [
+    {
+      "command": "python tests/check_scaffold.py",
+      "exit_code": 0,
+      "stdout": "PASS file: AGENTS.md\nPASS file: README.md\nPASS file: .gitignore\nPASS file: sources.md\nPASS file: wiki/index.md\nPASS file: wiki/log.md\nPASS file: outline.md\nPASS file: report.md\nPASS file: .agents/workflows/README.md\nPASS file: raw/README.md\nPASS dir:  raw\nPASS dir:  raw/assets\nPASS dir:  wiki\nPASS dir:  cards\nPASS dir:  drafts\nPASS dir:  assets\nPASS dir:  tests\nPASS dir:  .agents/workflows\nPASS Phase 4 artifacts consistent with project scaffold\nRESULT: PASS (0 issues)",
+      "stderr": ""
+    },
+    {
+      "command": "python tests/check_ingest.py",
+      "exit_code": 0,
+      "stdout": "SOURCE P01 PDF hash PASS\nSOURCE P02 PDF hash PASS\nSOURCE P03 PDF hash PASS\nSOURCE P04 PDF hash PASS\nSOURCE P05 PDF hash PASS\nWIKI_ENTRIES 19 UNIQUE_IDS 19\nRESULT: PASS (0 issues)",
+      "stderr": ""
+    },
+    {
+      "command": "python tests/check_graph.py",
+      "exit_code": 0,
+      "stdout": "CARDS 26 SLIDES 12\nRESULT: PASS (0 issues)",
+      "stderr": ""
+    },
+    {
+      "command": "python tests/check_deck.py",
+      "exit_code": 0,
+      "stdout": "RESULT: PASS (0 issues)",
+      "stderr": ""
+    },
+    {
+      "command": "python tests/check_release.py",
+      "exit_code": 0,
+      "stdout": "Phase5 slides=12 cards=26 sources=5\nRESULT: PASS (0 issues)",
+      "stderr": ""
+    }
+  ],
+  "deployment_status": "not_published",
+  "independent_full_scientific_review": "not_completed",
+  "browser_test_carried_from_phase4": "46/46 per runs/phase4_browser_report.json"
+}

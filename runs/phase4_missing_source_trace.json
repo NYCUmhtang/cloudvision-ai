@@ -1,0 +1,48 @@
+{
+  "run_id": "phase4_missing_source",
+  "passed": false,
+  "events": [
+    {
+      "at": "2026-11-19T07:21:59+00:00",
+      "node": "N03_Wiki_Query",
+      "result": "PASS",
+      "detail": "Reused Phase 3 19 entries and 26 cards",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:59+00:00",
+      "node": "G01_Coverage",
+      "result": "FAIL",
+      "detail": "Missing required evidence card",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:59+00:00",
+      "node": "G01_Coverage_retry",
+      "result": "FAIL",
+      "detail": "Evidence cannot be fabricated by requery",
+      "attempt": 1
+    },
+    {
+      "at": "2026-11-19T07:21:59+00:00",
+      "node": "G01_Coverage_retry",
+      "result": "FAIL",
+      "detail": "Evidence cannot be fabricated by requery",
+      "attempt": 2
+    },
+    {
+      "at": "2026-11-19T07:21:59+00:00",
+      "node": "G01_Coverage_retry",
+      "result": "FAIL",
+      "detail": "Evidence cannot be fabricated by requery",
+      "attempt": 3
+    },
+    {
+      "at": "2026-11-19T07:21:59+00:00",
+      "node": "STOP",
+      "result": "SAFE_STOP",
+      "detail": "Coverage cannot pass; no files overwritten",
+      "attempt": 0
+    }
+  ]
+}

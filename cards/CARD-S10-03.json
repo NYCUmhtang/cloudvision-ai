@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S10-03",
+  "slide_number": 10,
+  "slide_title": "雲影遮罩與影像切換案例",
+  "teaching_objective": "理解遮罩的形式及可視化方式",
+  "wiki_id": "W-M05-005",
+  "wiki_title": "CloudS2Mask 大影像切塊與拼接策略",
+  "wiki_path": "wiki/W-M05-005.md",
+  "wiki_sha256": "ec03de559d2f0dd2a83c4dd32cb506edb63e8dd1b602af676c7eafe5c0e644c9",
+  "source_ids": [
+    "P05"
+  ],
+  "source_pages": "P05 PDF pp.6–7，§2.6–2.7、Figures 3–6",
+  "evidence_sections": {
+    "基礎說明": "完整 Sentinel-2 場景太大，CloudS2Mask 將影像切為 patches 推論後拼接成遮罩，切塊交界處尤其容易出現空間不連續。",
+    "進階重點": "- 預設 overlap 為 128 pixels，換取較穩定的重疊區估計但增加推論量。\n- Offset Grid 將隔行切塊水平錯位半個 patch 寬，降低多個低信賴角落重疊的問題。\n- 預測合併以位置相關的權重調整 patch 邊界與角落的信心值，再平均重疊區類別機率。\n- ATTA、模型集成提升準確度通常需要更多計算成本。",
+    "文獻差異、適用條件及限制": "P05 p.10 Table 4 的 offset grid 與一般 grid 於該實驗 BOA 僅 0.922 與 0.921，不能誇大其增益。"
+  },
+  "evidence_sha256": "ff04566f75d885b3962c71c411f78000a431b2b4efa450abf83ec35f64aa35a2",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

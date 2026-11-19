@@ -1,0 +1,20 @@
+{
+  "card_id": "CARD-S10-01",
+  "slide_number": 10,
+  "slide_title": "雲影遮罩與影像切換案例",
+  "teaching_objective": "理解遮罩的形式及可視化方式",
+  "wiki_id": "W-M02-002",
+  "wiki_title": "二元與多類別雲影遮罩",
+  "wiki_path": "wiki/W-M02-002.md",
+  "wiki_sha256": "acf3b9caccf69d01b0191b7b155c3e0c9db034d0a62dd3d675eff7b66c81e832",
+  "source_ids": [
+    "P01"
+  ],
+  "source_pages": "7–8",
+  "evidence_sections": {
+    "基礎說明與知識整理": "雲遮罩（Cloud Mask）是與影像像元對應的分類結果。**二元遮罩**可能只分雲／非雲，或把雲與雲影合併為污染／未污染；兩種定義不可混淆。**多類別遮罩**可以分別標記厚雲、薄雲、雲影與清晰地表。",
+    "進階重點": "- 不同資料集的像元數值及類別編碼可能不同，整合前必須讀取原始標籤表。\n- 從多類別轉成二元時，必須記錄合併規則；否則模型比較會不公平。\n- 論文 Figure 4 的顏色範例並非通用的全球標準。"
+  },
+  "evidence_sha256": "133ca114424abe6b0de965894f37b8e80ddd1cf6b9c45b949a1301765f22c78d",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

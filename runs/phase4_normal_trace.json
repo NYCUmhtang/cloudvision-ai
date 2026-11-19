@@ -1,0 +1,69 @@
+{
+  "run_id": "phase4_normal",
+  "passed": true,
+  "events": [
+    {
+      "at": "2026-11-19T07:21:56+00:00",
+      "node": "N03_Wiki_Query",
+      "result": "PASS",
+      "detail": "Reused Phase 3 19 entries and 26 cards",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:56+00:00",
+      "node": "G01_Coverage",
+      "result": "PASS",
+      "detail": "12 slides / 26 evidence cards",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:56+00:00",
+      "node": "N04_Evidence_Cards",
+      "result": "PASS",
+      "detail": "Reused phase3 provenance verified cards",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:56+00:00",
+      "node": "G02_Fidelity",
+      "result": "PASS",
+      "detail": "Phase 3 literal-card check retained; new prose subject to human review",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:57+00:00",
+      "node": "N05_Draft_and_Render",
+      "result": "PASS",
+      "detail": "12 markdown drafts + self-contained HTML",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:57+00:00",
+      "node": "G03_HTML_Static_Check",
+      "result": "PASS",
+      "detail": "0 errors; draft/content alignment verified",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:57+00:00",
+      "node": "HUMAN_SCIENTIFIC_REVIEW",
+      "result": "PENDING",
+      "detail": "Not a substitute for independent semantic assessment",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:57+00:00",
+      "node": "HUMAN_OUTLINE_APPROVAL",
+      "result": "PENDING",
+      "detail": "User has not explicitly approved all twelve individual slides",
+      "attempt": 0
+    },
+    {
+      "at": "2026-11-19T07:21:57+00:00",
+      "node": "END",
+      "result": "PASS",
+      "detail": "HTML is draft until human review",
+      "attempt": 0
+    }
+  ]
+}

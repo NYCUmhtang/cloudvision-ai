@@ -1,0 +1,22 @@
+{
+  "card_id": "CARD-S08-01",
+  "slide_number": 8,
+  "slide_title": "AI 如何做像元語意分割？",
+  "teaching_objective": "區分傳統方法和模型式分類",
+  "wiki_id": "W-M05-001",
+  "wiki_title": "傳統方法、機器學習與深度學習",
+  "wiki_path": "wiki/W-M05-001.md",
+  "wiki_sha256": "0770a41cec2e1bbd2c2c88e5bdef2180f81eb7e6348eba574fb74f48b5081ccd",
+  "source_ids": [
+    "P01",
+    "P02"
+  ],
+  "source_pages": "15–19",
+  "evidence_sections": {
+    "基礎說明與知識整理": "雲偵測可以依方法分成閾值規則、傳統機器學習與深度學習。Fmask 代表使用光譜規則和脈絡條件的傳統方法；SVM 與隨機森林使用特徵及標註資料分類；CNN 和 U-Net 等深度學習模型可學習空間與光譜特徵並輸出像元分類。",
+    "進階重點": "- U-Net 採用編碼器－解碼器結構進行像元級語意分割。\n- ViT 類方法可建模長距離關係，但計算資源需求可能較高。\n- 訓練資料的地景、雲型、感測器以及測試方法影響表現；不得只用單篇的 Accuracy 宣稱某方法一定最好。",
+    "保留差異": "P01 是跨研究的總論，P02 是 Fmask 4.0 具體實驗；其評估結果不能當成相同資料集上的 AI 與 Fmask 直接比較。"
+  },
+  "evidence_sha256": "7009bf14373a347856fa4bd9c379ae1ddeb9c6a476709a836f720eff4ce9ad8c",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

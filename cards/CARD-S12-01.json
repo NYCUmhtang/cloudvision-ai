@@ -1,0 +1,20 @@
+{
+  "card_id": "CARD-S12-01",
+  "slide_number": 12,
+  "slide_title": "比較研究並回顧 Wiki 來源",
+  "teaching_objective": "學會不跨資料集直接排名",
+  "wiki_id": "W-M06-002",
+  "wiki_title": "Fmask 4.0 的具體驗證結果與限制",
+  "wiki_path": "wiki/W-M06-002.md",
+  "wiki_sha256": "dcd28b6f5e6eff848c65a34795cf7f10be98158567fb1bae6605a7b55c232b5a",
+  "source_ids": [
+    "P02"
+  ],
+  "source_pages": "13–17",
+  "evidence_sections": {
+    "基礎說明與知識整理": "在 Qiu 等人（2019）所使用的驗證資料中，Fmask 4.0 對 Landsat 4–7 的整體準確率為 **92.40%**，Fmask 3.3 為 **90.73%**；對 Landsat 8，分別為 **94.59%** 與 **93.30%**。對 Sentinel-2，Fmask 4.0 為 **94.30%**，Sen2Cor 2.5.5 為 **87.10%**。",
+    "重要限制": "- 以上數字是該論文在特定驗證樣本上的表現，不能推廣成任何地區或所有影像的必然結果。\n- Sentinel-2 的雲影 Producer’s Accuracy：Fmask 4.0 **69.64%**，Sen2Cor 2.5.5 **39.29%**；但 Sen2Cor 2.5.5 的雲影 User’s Accuracy **73.33%**，高於 Fmask 4.0 的 **62.90%**。\n- Sentinel-2 雲機率的校準部分依據從 Landsat 8 模擬的資料；作者也提到使用真實 Sentinel-2 訓練影像可改善校準。\n- P02 原文承認雲影偵測仍有漏判和偏差，不能以單一 Accuracy 取代完整評估。"
+  },
+  "evidence_sha256": "54cbb9d7a2838d1609100b13623c3e87d4d790b8014d9e5748ee355bb42e6c8f",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

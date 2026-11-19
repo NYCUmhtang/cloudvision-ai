@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S05-02",
+  "slide_number": 5,
+  "slide_title": "雲影不等於地形陰影",
+  "teaching_objective": "辨識不同陰影的成因",
+  "wiki_id": "W-M02-001",
+  "wiki_title": "厚雲、薄雲、雲影與清晰像元",
+  "wiki_path": "wiki/W-M02-001.md",
+  "wiki_sha256": "a2114ae26863edfaef99ab38603f0d34d09ccb9bd156be5462fde55a3273b747",
+  "source_ids": [
+    "P01"
+  ],
+  "source_pages": "5–8",
+  "evidence_sections": {
+    "基礎說明與知識整理": "厚雲通常較明顯遮蔽地表；薄雲仍可能讓下方地物隱約可見，但會改變光譜反射。雲影是雲遮擋日光投射到地表產生的暗區；地形陰影則主要由地勢與光照造成。清晰像元指適合既定分析用途、未被不合格雲影污染的觀測像元。",
+    "進階重點": "- 論文用不透明度敘述厚雲與薄雲，作為該文獻的分類解釋；不同資料集的標註規則未必一致。\n- 類別設計可包含厚雲、薄雲、雲影及地表；不應把「薄雲」和「高雲」視為同義詞。\n- 水體、地形陰影和深色地表可能與雲影混淆。",
+    "注意": "清晰像元的判定依研究用途與標籤定義；部分薄雲可能降低定量分析品質。"
+  },
+  "evidence_sha256": "48b96f79e711b4ce2f63eb6158b85c91b0a27df7e96f96e2ab7b27e5f044a581",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

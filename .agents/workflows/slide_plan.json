@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "proposed_pending_human_approval",
+  "slides": [
+    {"number": 1, "title": "CloudVision AI：學習目標", "wiki_ids": ["W-M01-001"], "query": "衛星光學遙測 雲影 問題", "objective": "知道本次簡報要解決什麼問題"},
+    {"number": 2, "title": "雲影為何影響地表觀測？", "wiki_ids": ["W-M01-001","W-M02-001"], "query": "雲影 地表 可用影像", "objective": "理解雲與陰影對觀測資料的影響"},
+    {"number": 3, "title": "衛星如何觀測地球？", "wiki_ids": ["W-M03-001","W-M01-001"], "query": "衛星 光學 多光譜 波段", "objective": "認識光學影像和不同波段"},
+    {"number": 4, "title": "厚雲、薄雲與雲影的差異", "wiki_ids": ["W-M02-003","W-M02-001"], "query": "厚雲 薄雲 雲影 清晰像元", "objective": "分辨四個常用的標註類別"},
+    {"number": 5, "title": "雲影不等於地形陰影", "wiki_ids": ["W-M04-003","W-M02-001"], "query": "雲影 地形陰影", "objective": "辨識不同陰影的成因"},
+    {"number": 6, "title": "多光譜影像提供什麼線索？", "wiki_ids": ["W-M03-001","W-M03-002"], "query": "RGB NIR SWIR 多光譜 波段", "objective": "理解判釋會使用哪些資訊"},
+    {"number": 7, "title": "傳統方法：Fmask 4.0", "wiki_ids": ["W-M04-001","W-M04-002"], "query": "Fmask 閾值 HOT DEM", "objective": "認識規則式雲影判釋"},
+    {"number": 8, "title": "AI 如何做像元語意分割？", "wiki_ids": ["W-M05-001","W-M05-003"], "query": "深度學習 語意分割 CNN", "objective": "區分傳統方法和模型式分類"},
+    {"number": 9, "title": "U-Net 與 CloudS2Mask", "wiki_ids": ["W-M05-003","W-M05-004"], "query": "U-Net CloudS2Mask 模型", "objective": "認識常見架構和訓練概念"},
+    {"number": 10, "title": "雲影遮罩與影像切換案例", "wiki_ids": ["W-M02-002","W-M02-003","W-M05-005"], "query": "原始影像 分類 遮罩 切塊", "objective": "理解遮罩的形式及可視化方式"},
+    {"number": 11, "title": "怎樣評估辨識品質？", "wiki_ids": ["W-M06-001","W-M06-004","W-M06-005"], "query": "Precision Recall IoU BOA 評估", "objective": "知道評估指標需要配合資料集與條件"},
+    {"number": 12, "title": "比較研究並回顧 Wiki 來源", "wiki_ids": ["W-M06-002","W-M06-003","W-M06-005"], "query": "Fmask CloudSEN12 CloudS2Mask 比較", "objective": "學會不跨資料集直接排名"}
+  ]
+}

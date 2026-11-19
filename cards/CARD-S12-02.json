@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S12-02",
+  "slide_number": 12,
+  "slide_title": "比較研究並回顧 Wiki 來源",
+  "teaching_objective": "學會不跨資料集直接排名",
+  "wiki_id": "W-M06-003",
+  "wiki_title": "CloudSEN12 的空間切分與模型比較",
+  "wiki_path": "wiki/W-M06-003.md",
+  "wiki_sha256": "81d961ab05fbe640f6d3daa23d1096ac6bed51986c9430f9b79f5b073f5f2d6b",
+  "source_ids": [
+    "P03"
+  ],
+  "source_pages": "P03 PDF pp.8–12，§Technical Validation、Figures 8–9、Table 5",
+  "evidence_sections": {
+    "基礎說明": "比較雲影偵測模型時，必須確保訓練與測試位置盡可能獨立、類別映射一致，不能只比較單一整體準確率。",
+    "進階重點": "- 資料集採 spatially stratified block split，避免相近地點的空間自相關誇大模型表現（PDF p.8）。\n- 研究分 cloud/non-cloud、cloud shadow、valid/invalid 三種測試，並以 PA、UA、BOA 評估（PDF pp.9–10）。\n- Table 5 顯示 Fmask、Sen2Cor、KappaMask 等輸出類別與 CloudSEN12 四類標籤的對應，部分方法不輸出雲影或薄雲。\n- 文中指出薄雲與雲影是困難類別，且參考標籤本身有不確定性。",
+    "文獻差異、適用條件及限制": "這是同一個資料集／實驗框架內的比較；P02 Fmask Table 5 的 Overall Accuracy 與這裡的 BOA 定義不同，不能直接排名。"
+  },
+  "evidence_sha256": "21e361a28ea81cb6aac10934aa510ca2b4d41a136c63894f02858df9cf12b6f2",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

@@ -1,0 +1,236 @@
+{
+  "checked_at": "2026-11-19T07:24:02.862770+00:00",
+  "passed": true,
+  "tests": [
+    {
+      "test": "initial slide 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "no JS error 1440",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "test": "no horizontal overflow 1440",
+      "passed": true,
+      "detail": "{'scroll': 1440, 'client': 1440}"
+    },
+    {
+      "test": "next button 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "previous button 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "sources modal 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "doi link 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 01 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 02 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 03 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 04 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 05 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 06 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 07 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 08 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 09 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 10 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 11 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 12 heading 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "12-slide horizontal layout 1440",
+      "passed": true,
+      "detail": "max=0"
+    },
+    {
+      "test": "last slide next disabled 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide ten reached 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "interactive mask 1440",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "initial slide 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "no JS error 390",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "test": "no horizontal overflow 390",
+      "passed": true,
+      "detail": "{'scroll': 390, 'client': 390}"
+    },
+    {
+      "test": "next button 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "previous button 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "sources modal 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "doi link 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 01 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 02 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 03 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 04 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 05 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 06 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 07 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 08 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 09 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 10 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 11 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide 12 heading 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "12-slide horizontal layout 390",
+      "passed": true,
+      "detail": "max=0"
+    },
+    {
+      "test": "last slide next disabled 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "slide ten reached 390",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "interactive mask 390",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

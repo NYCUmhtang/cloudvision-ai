@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S09-02",
+  "slide_number": 9,
+  "slide_title": "U-Net 與 CloudS2Mask",
+  "teaching_objective": "認識常見架構和訓練概念",
+  "wiki_id": "W-M05-004",
+  "wiki_title": "CloudS2Mask 的模型、訓練及四類輸出",
+  "wiki_path": "wiki/W-M05-004.md",
+  "wiki_sha256": "b8bc434f7ee4e401f97bb4a2b9057469d586840556cb9f2bae89d2ab898ade7b",
+  "source_ids": [
+    "P05"
+  ],
+  "source_pages": "P05 PDF pp.1–5，§2.1–2.5、Table 2、Figure 2",
+  "evidence_sections": {
+    "基礎說明": "CloudS2Mask 是針對 Sentinel-2 的雲與雲影偵測開源深度學習方法，利用 U-Net 結構與 RegNetY_006 backbone 進行像元分割。",
+    "進階重點": "- 訓練先以標準化後的三類資料（clear、cloud、shadow）學習，再透過 transfer learning 在 CloudSEN12 的四類標籤上微調，區分 clear、thin cloud、thick cloud、shadow。\n- 使用 Progressive Resizing、Hard Fine-tuning、Model Ensembling 和 Test Time Augmentation 等技術。\n- 論文測試涵蓋 CloudSEN12 與 PixBox，明確區分來源資料、訓練集、驗證集和測試集。",
+    "文獻差異、適用條件及限制": "這是論文描述的作者實驗結果，本專案未實際運行 CloudS2Mask 或重訓模型。"
+  },
+  "evidence_sha256": "5737fead7f245fd3cd1d7584dca6657a2a3e5eaf0c2c38d4fd7f44e9a6e10b13",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

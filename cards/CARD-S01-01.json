@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S01-01",
+  "slide_number": 1,
+  "slide_title": "CloudVision AI：學習目標",
+  "teaching_objective": "知道本次簡報要解決什麼問題",
+  "wiki_id": "W-M01-001",
+  "wiki_title": "光學遙測與雲影問題",
+  "wiki_path": "wiki/W-M01-001.md",
+  "wiki_sha256": "6167919f1fca1cdf904487a7727bc36618d9837730dbd8349438bf326c413566",
+  "source_ids": [
+    "P01"
+  ],
+  "source_pages": "1–5, 7",
+  "evidence_sections": {
+    "基礎說明與知識整理": "光學遙測利用衛星感測器量測可見光、近紅外與短波紅外等波段，提供地表監測所需的光譜與空間資訊。雲會遮蔽地物、影響大氣校正，雲影則使地表亮度降低。若直接使用受汙染像元，土地覆蓋分類及時間序列分析可能受到影響。",
+    "進階重點": "- **TOA** 是大氣頂反射率，**BOA** 是經大氣校正得到的地表反射率；兩者不應混稱。\n- 雲偵測是識別受雲影響的像元，不等同於將雲下真實地表重建出來。\n- 雲影誤判的常見對象包括水體、地形陰影及深色岩石。",
+    "教學提示": "展示同一區域有雲／無雲影像時，要說明觀測條件差異，不宣稱演算法已恢復遮蔽地表。"
+  },
+  "evidence_sha256": "f9acf7837d1ced4427a7cb9315bae50025d2387933874e97178066b9b31b3ba7",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

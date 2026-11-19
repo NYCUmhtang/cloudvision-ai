@@ -1,0 +1,21 @@
+{
+  "card_id": "CARD-S11-02",
+  "slide_number": 11,
+  "slide_title": "怎樣評估辨識品質？",
+  "teaching_objective": "知道評估指標需要配合資料集與條件",
+  "wiki_id": "W-M06-004",
+  "wiki_title": "Precision、Recall、F1、IoU 與 OA",
+  "wiki_path": "wiki/W-M06-004.md",
+  "wiki_sha256": "91f90e24d4c7469135e209f209d5033f6d6160d6932c7895bbbf8d4ff6c9a808",
+  "source_ids": [
+    "P04"
+  ],
+  "source_pages": "P04 PDF p.10，§3.2，Equations (1)–(7)",
+  "evidence_sections": {
+    "基礎說明": "雲影分割的結果通常與人工參考遮罩比較，得到 TP、FP、TN、FN，再計算 Precision、Recall、F1、IoU 與 Overall Accuracy。",
+    "進階重點": "- Precision=TP/(TP+FP)；Recall=TP/(TP+FN)。\n- F1=2×Precision×Recall/(Precision+Recall)；IoU=TP/(TP+FP+FN)。\n- OA=(TP+TN)/(TP+TN+FP+FN)；背景像元大量占比時，單看 OA 可能掩蓋少數類別錯誤。\n- 多類別評估需明確說明是 macro、micro、類別平均或逐類別；P05 的 BOA 不等於 P04 的 OA。",
+    "文獻差異、適用條件及限制": "P04 p.10 的 mIoU 公式為其文章列出的特定二元類別平均式，教學時應明確說明平均定義，避免視為所有多類別 mIoU 的唯一寫法。"
+  },
+  "evidence_sha256": "07b29d8eacc79327e86df23d8d0c3f7c1e927667ce7ce9d4be4a2d1639a942c5",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

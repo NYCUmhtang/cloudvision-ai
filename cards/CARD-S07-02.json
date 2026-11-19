@@ -1,0 +1,20 @@
+{
+  "card_id": "CARD-S07-02",
+  "slide_number": 7,
+  "slide_title": "傳統方法：Fmask 4.0",
+  "teaching_objective": "認識規則式雲影判釋",
+  "wiki_id": "W-M04-002",
+  "wiki_title": "Fmask 4.0 的 HOT、DEM 與 GSWO",
+  "wiki_path": "wiki/W-M04-002.md",
+  "wiki_sha256": "3f60bdb56f8f405e79e0da307380c74f5bf3851da9e376acbcd10899bb431d67",
+  "source_ids": [
+    "P02"
+  ],
+  "source_pages": "5–9",
+  "evidence_sections": {
+    "基礎說明與知識整理": "Fmask 4.0 的三項重要改善包括輔助資料整合、新雲機率、光譜－脈絡辨識。GSWO 改善水陸判別，DEM 幫助處理高程造成的熱紅外／捲雲波段變化。因 Sentinel-2 缺少熱紅外波段，論文使用 HOT-based cloud probability 補充低雲判識資訊。",
+    "進階重點": "- HOT 使用藍光及紅光波段的 TOA 反射率；詳細公式見 P02 §3.2.2。\n- Fmask 4.0 對 Sentinel-2 的 cirrus cloud probability 在組合式中給予 0.5 權重；這是研究方法參數而非普遍最佳值。\n- SCSI 結合 NDSI 與綠光局部標準差，改善大範圍雪／冰與雲之判別。\n- 遮罩後處理使用形態學侵蝕與膨脹降低亮地表誤判，但可能漏掉小雲。"
+  },
+  "evidence_sha256": "86171201e3921160b460528e062d6904b9974bd1937a853a7d92593a4403fd3d",
+  "review_status": "automated_provenance_pass_only;human_scientific_review_pending"
+}

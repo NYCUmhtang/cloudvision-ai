@@ -1,0 +1,316 @@
+[
+  {
+    "slide": 1,
+    "query": "衛星光學遙測 雲影 問題",
+    "results": [],
+    "passed": false,
+    "missing_ids": [
+      "W-M99-999"
+    ],
+    "retrieved": 0
+  },
+  {
+    "slide": 2,
+    "query": "雲影 地表 可用影像",
+    "results": [
+      {
+        "wiki_id": "W-M01-001",
+        "match_score": 2,
+        "title": "光學遙測與雲影問題",
+        "source_ids": [
+          "P01"
+        ]
+      },
+      {
+        "wiki_id": "W-M02-001",
+        "match_score": 2,
+        "title": "厚雲、薄雲、雲影與清晰像元",
+        "source_ids": [
+          "P01"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 3,
+    "query": "衛星 光學 多光譜 波段",
+    "results": [
+      {
+        "wiki_id": "W-M03-001",
+        "match_score": 2,
+        "title": "多光譜與感測器波段差異",
+        "source_ids": [
+          "P01",
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M01-001",
+        "match_score": 3,
+        "title": "光學遙測與雲影問題",
+        "source_ids": [
+          "P01"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 4,
+    "query": "厚雲 薄雲 雲影 清晰像元",
+    "results": [
+      {
+        "wiki_id": "W-M02-003",
+        "match_score": 3,
+        "title": "CloudSEN12 的四類雲影語意標籤",
+        "source_ids": [
+          "P03"
+        ]
+      },
+      {
+        "wiki_id": "W-M02-001",
+        "match_score": 4,
+        "title": "厚雲、薄雲、雲影與清晰像元",
+        "source_ids": [
+          "P01"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 5,
+    "query": "雲影 地形陰影",
+    "results": [
+      {
+        "wiki_id": "W-M04-003",
+        "match_score": 2,
+        "title": "雲影與地形暗區的區別",
+        "source_ids": [
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M02-001",
+        "match_score": 2,
+        "title": "厚雲、薄雲、雲影與清晰像元",
+        "source_ids": [
+          "P01"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 6,
+    "query": "RGB NIR SWIR 多光譜 波段",
+    "results": [
+      {
+        "wiki_id": "W-M03-001",
+        "match_score": 5,
+        "title": "多光譜與感測器波段差異",
+        "source_ids": [
+          "P01",
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M03-002",
+        "match_score": 2,
+        "title": "資料集的波段、解析度及跨感測器限制",
+        "source_ids": [
+          "P03",
+          "P04"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 7,
+    "query": "Fmask 閾值 HOT DEM",
+    "results": [
+      {
+        "wiki_id": "W-M04-001",
+        "match_score": 3,
+        "title": "Fmask 4.0 整體流程",
+        "source_ids": [
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M04-002",
+        "match_score": 3,
+        "title": "Fmask 4.0 的 HOT、DEM 與 GSWO",
+        "source_ids": [
+          "P02"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 8,
+    "query": "深度學習 語意分割 CNN",
+    "results": [
+      {
+        "wiki_id": "W-M05-001",
+        "match_score": 3,
+        "title": "傳統方法、機器學習與深度學習",
+        "source_ids": [
+          "P01",
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M05-003",
+        "match_score": 2,
+        "title": "深度學習雲偵測的主要網路架構",
+        "source_ids": [
+          "P04"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 9,
+    "query": "U-Net CloudS2Mask 模型",
+    "results": [
+      {
+        "wiki_id": "W-M05-003",
+        "match_score": 2,
+        "title": "深度學習雲偵測的主要網路架構",
+        "source_ids": [
+          "P04"
+        ]
+      },
+      {
+        "wiki_id": "W-M05-004",
+        "match_score": 3,
+        "title": "CloudS2Mask 的模型、訓練及四類輸出",
+        "source_ids": [
+          "P05"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 2
+  },
+  {
+    "slide": 10,
+    "query": "原始影像 分類 遮罩 切塊",
+    "results": [
+      {
+        "wiki_id": "W-M02-002",
+        "match_score": 2,
+        "title": "二元與多類別雲影遮罩",
+        "source_ids": [
+          "P01"
+        ]
+      },
+      {
+        "wiki_id": "W-M02-003",
+        "match_score": 0,
+        "title": "CloudSEN12 的四類雲影語意標籤",
+        "source_ids": [
+          "P03"
+        ]
+      },
+      {
+        "wiki_id": "W-M05-005",
+        "match_score": 2,
+        "title": "CloudS2Mask 大影像切塊與拼接策略",
+        "source_ids": [
+          "P05"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 3
+  },
+  {
+    "slide": 11,
+    "query": "Precision Recall IoU BOA 評估",
+    "results": [
+      {
+        "wiki_id": "W-M06-001",
+        "match_score": 4,
+        "title": "雲影偵測評估指標",
+        "source_ids": [
+          "P01",
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M06-004",
+        "match_score": 5,
+        "title": "Precision、Recall、F1、IoU 與 OA",
+        "source_ids": [
+          "P04"
+        ]
+      },
+      {
+        "wiki_id": "W-M06-005",
+        "match_score": 1,
+        "title": "CloudS2Mask 的結果與速度－準確率權衡",
+        "source_ids": [
+          "P05"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 3
+  },
+  {
+    "slide": 12,
+    "query": "Fmask CloudSEN12 CloudS2Mask 比較",
+    "results": [
+      {
+        "wiki_id": "W-M06-002",
+        "match_score": 1,
+        "title": "Fmask 4.0 的具體驗證結果與限制",
+        "source_ids": [
+          "P02"
+        ]
+      },
+      {
+        "wiki_id": "W-M06-003",
+        "match_score": 3,
+        "title": "CloudSEN12 的空間切分與模型比較",
+        "source_ids": [
+          "P03"
+        ]
+      },
+      {
+        "wiki_id": "W-M06-005",
+        "match_score": 4,
+        "title": "CloudS2Mask 的結果與速度－準確率權衡",
+        "source_ids": [
+          "P05"
+        ]
+      }
+    ],
+    "passed": true,
+    "missing_ids": [],
+    "retrieved": 3
+  }
+]
